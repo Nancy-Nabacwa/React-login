@@ -1,3 +1,4 @@
+import './index.css'
 import { useGetUsers } from "./hooks/useGetUsers";
 import SingleUser from "./useSingleUser";
 
@@ -8,9 +9,9 @@ const Users =()=>{
         <div>
              {loading && <h2>Loading users ...</h2>}
                   
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>
+        <ul  className="user-list">
+          {users.map((user, index) => (
+            <li key={index}>
               <SingleUser user={user} />
             </li>
           ))}
